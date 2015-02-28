@@ -13,7 +13,6 @@ import java.io.*;
 
 public class Bowler {
 
-	//
 	private String name;
 	
 	//Define an array of integers to store the scores in a bowlers game.
@@ -21,12 +20,13 @@ public class Bowler {
 	//A bowler earns a bonus roll if they score a strike in the final frame.
 	private int[] rolls = new int[21];
 	
-	//
 	int score;
 	
 	
 	/**
-	 * 
+	 * Create a Bowler with a name, 
+	 * an associated array of integers to store the scores in the bowlers game
+	 * and an initial score of 0.
 	 */
 	
 	public Bowler(String name) {
@@ -38,7 +38,7 @@ public class Bowler {
 	
 	
 	/**
-	 *
+	 * Returns the Bowlers name
 	 */
 	 
 	 public String getName() {
@@ -47,7 +47,7 @@ public class Bowler {
 	 
 	 
 	/**
-	 * Updates the bowlers name - not important?
+	 * Updates the bowlers name
 	 */
 	  
     public void setName(String newName) {
@@ -57,10 +57,10 @@ public class Bowler {
     
 	/**
 	 * A method to store the score from a bowlers game,
-	 * specifying a strike, spare and bonus ...
+	 * specifying a strike, spare and bonus.
 	 */
 	 
-	public void setScore() /* throws exception*/ {
+	public void setScore() /*TODO throws exception*/ {
 		
 		for (int j = 0; j < 20; j = j+2) {
 			
@@ -88,7 +88,7 @@ public class Bowler {
 	}
 	
 	/**
-	 *
+	 * Return a specified integer from the array of rolls. 
 	 */
 	    
     public int getRolls(int i) {
@@ -96,7 +96,7 @@ public class Bowler {
     }
     
     /**
-     *
+     * Updates a specified integer in an array of rolls.
      */
     
     public void setRolls(int i, int pins) {
