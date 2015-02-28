@@ -40,8 +40,9 @@ public class BowlingGame {
         		
         		for (int i = 0; i < numberOfBowlers; i++) {
         			
+        			int iPlusOne = i+1;
         			//Prompt the user to enter the number of players
-					System.out.println("Please enter the name of player " + (i+1) + ": ");
+					System.out.println("Please enter the name of player " + (iPlusOne) + ": ");
 					
 					String name = br.readLine();
 					
@@ -53,19 +54,21 @@ public class BowlingGame {
 					
         		System.out.println("So the players for this game are: ");
         		for (int i = 0; i < numberOfBowlers; i++) {
-        			System.out.println("Player " + (i+1) + ": " + bowlers[i].getName());	
+        			int iPlusOne = i+1;
+        			System.out.println("Player " + (iPlusOne) + ": " + bowlers[i].getName());	
         		}
         		
         		
         		System.out.println("Let's start the game!");
         		
-        		//
-        		for (int j = 0; j < 10; j++) {
+        		
+        		for (int j = 0; j < 10; j++) { 
         			for (int i = 0; i < numberOfBowlers; i++) {
-        			
-        			
-        				System.out.println("Frame " + (j+1));
-        				System.out.println("Player " + (i+1) + ": " + bowlers[i].getName() + " is up!"); 
+        				
+        				int jPlusOne = j+1;
+        				int iPlusOne = i+1;
+        				System.out.println("Frame " + jPlusOne);
+        				System.out.println("Player " + (iPlusOne) + ": " + bowlers[i].getName() + " is up!"); 
         			
         				int pins = Integer.parseInt(br.readLine());
         				//TODO NEED METHOD HERE TO THROW ERROR IF AMOUNT ENTERED IS GREATER THAN 10
@@ -87,7 +90,7 @@ public class BowlingGame {
         					System.out.println("Strike!");
         					bowlers[i].setRolls(j+1, pins);
         				}
-        				else if (0 <= pins && pins < 10 - bowlers[i].getRolls(j)) {
+        				else if ((0 <= pins && pins < 10 - bowlers[i].getRolls(j)) | ((0 <= pins && pins < 10) && bowlers[i].getRolls(j) == 10)) {
         					bowlers[i].setRolls(j+1, pins);
         				}        				
         				
@@ -105,7 +108,9 @@ public class BowlingGame {
     			
     			for (int i = 0; i < numberOfBowlers; i++) {
     				for (int j = 0; j < 10; j++) {
-    					System.out.println("The pins knocked down: " + (bowlers[i].getRolls(j)) + bowlers[i].getRolls(j));
+    					int totalPinsKnockedInAFrame = bowlers[i].getRolls(j) + bowlers[i].getRolls(j+1);
+    					//TODO FIX THIS
+    					System.out.println("The pins knocked down: " + totalPinsKnockedInAFrame);
     				}
     			}
     		
