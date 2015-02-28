@@ -37,7 +37,6 @@ public class BowlingGame {
         		
         		//Create a list of the bowlers 
         		Bowler[] bowlers = new Bowler[numberOfBowlers];
-        		//List<Bowler> bowlers = new ArrayList<Bowler>();
         		
         		for (int i = 0; i < numberOfBowlers; i++) {
         			
@@ -46,21 +45,17 @@ public class BowlingGame {
 					
 					String name = br.readLine();
 					
-					//Method 1 with array
 					Bowler bowler = new Bowler("");
 					bowlers[i] = bowler;
 					bowlers[i].setName(name);
-					System.out.println(bowlers[i]);
 					
-					//Method 2 with Array list
-					//Bowler bowler = new Bowler("");
-					//bowler.setName(name);
-					//bowlers.add(bowler);
-					//System.out.println(bowlers.get(i));
 					
 				}
 					
-        		System.out.println( "So the players for this game are: " + bowlers);	
+        		System.out.println("So the players for this game are: ");
+        		for (int i = 0; i < numberOfBowlers; i++) {
+        			System.out.println("Player " + (i+1) + ": " + bowlers[i].getName());	
+        		}
     		
 			}
     		
