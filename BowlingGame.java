@@ -23,27 +23,31 @@ public class BowlingGame {
 	
 		//Open up standard input
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	
+		
 		int numberOfBowlers = 0;
 	
 		// Read the number of bowlers from the command line; 
-    	try {
+		try {
 
-    		if (0 < Integer.parseInt("br.read()") && Integer.parseInt("br.read()") < 7) {
-        		numberOfBowlers = Integer.parseInt("br.read()");
+			String a = br.readLine();
+	
+    		if (0 < Integer.parseInt(a) && Integer.parseInt(a) < 7) {
+        		numberOfBowlers = Integer.parseInt(a);
         		System.out.println("Great, " + numberOfBowlers + " it is!");
     		}
     		else {
-    			System.out.println("This is not a valid format. Please enter a number between 1 and 6");
-        		System.exit(1);
+    			System.out.println("This is not a valid format. Please enter a number between 1 and 6: ");
+  
    			}
+
    		}
+
    		catch (NumberFormatException e) {
    			System.out.println(e.getMessage());
   	 	}
-//   	catch (IOException e) {
-  // 		System.out.println(e.getMessage());
- 		//}
+	   	catch (IOException e) {
+  	 		System.out.println(e.getMessage());
+ 		}
 
 	} //end of main
     
