@@ -50,9 +50,9 @@ public class Bowler {
 	 * Updates the bowlers name - not important?
 	 */
 	  
-//    public void setBowlerName(String newBowlerName) {
- //       bowlerName = newBowlerName;
-//    }
+    public void setName(String newName) {
+        name = newName;
+    }
     
     
 	/**
