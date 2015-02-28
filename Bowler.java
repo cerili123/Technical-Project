@@ -41,9 +41,9 @@ public class Bowler {
 	 *
 	 */
 	 
-//	 public String getName() {
-//	 	return name;
-//	 }
+	 public String getName() {
+	 	return name;
+	 }
 	 
 	 
 	/**
