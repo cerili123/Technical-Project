@@ -83,13 +83,25 @@ public class Bowler {
 	} //end of score() method
 	
 	
+	public int getScore() {
+		return score;
+	}
+	
 	/**
 	 *
 	 */
 	    
-    public int[] getRolls() {
-    	return rolls;
+    public int getRolls(int i) {
+    	return rolls[i];
     }
+    
+    /**
+     *
+     */
+    
+    public void setRolls(int i, int pins) {
+    	rolls[i] = rolls[pins];
+    } 
      
 	
 } // end of Bowler class
