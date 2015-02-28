@@ -56,12 +56,51 @@ public class BowlingGame {
         		for (int i = 0; i < numberOfBowlers; i++) {
         			System.out.println("Player " + (i+1) + ": " + bowlers[i].getName());	
         		}
+        		
+        		
+        		System.out.println("Let's start the game!");
+        		
+        		//
+        		for (int j = 0; j < 10; j++) {
+        			for (int i = 0; i < numberOfBowlers; i++) {
+        			
+        			
+        				System.out.println("Frame " + (j+1));
+        				System.out.println("Player " + (i+1) + ": " + bowlers[i].getName() + " is up!"); 
+        			
+        				int pins = Integer.parseInt(br.readLine());
+        				//TODO NEED METHOD HERE TO THROW ERROR IF AMOUNT ENTERED IS GREATER THAN 10
+	       				if (pins == 10) {
+        					System.out.println("Strike!");
+        					bowlers[i].setRolls(j, pins);
+        				}
+        				else if (0 <= pins && pins < 9) {
+        					bowlers[i].setRolls(j, pins);
+        				}
+/*        				
+        				br.readLine();
+        				if (bowlers[i].getRolls(j) + pins == 10) {
+        					System.out.println("Spare!");
+        				}
+        				bowlers[i].setRolls(j+1, pins);
+*/        				
+        			}
+        		}
+    			
+    			for (int i = 0; i < numberOfBowlers; i++) {
+    				for (int j = 0; j < 10; j++) {
+    					System.out.println("The pins knocked down: " + bowlers[i].getRolls(j));
+    					//bowlers[i].
+    				}
+    			}
     		
 			}
     		
     		else {
-    			System.out.println("This is not a valid format. Please enter a number between 1 and 6.");
-  				//TODO: LOOP BACK
+    			System.out.println("This is not a valid format. Please enter a number between 1 and 6: ");  				
+				//TODO: LOOP BACK
+				//if still not in a valid format:
+				//System.out.println("You don't seem to have the right amount of people. Please try again when you do!");
    			}
 
    		} //try
