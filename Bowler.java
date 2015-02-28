@@ -82,7 +82,7 @@ public class Bowler {
 		
 	} //end of score() method
 	
-	
+	//TODO WORK ON THIS SO THAT IT RETURNS THE SCORE AFTER THE SETSCORE METHOD
 	public int getScore() {
 		return score;
 	}
@@ -100,7 +100,7 @@ public class Bowler {
      */
     
     public void setRolls(int i, int pins) {
-    	rolls[i] = rolls[pins];
+    	rolls[i] = pins;
     } 
      
 	
