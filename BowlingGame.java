@@ -18,7 +18,7 @@ public class BowlingGame {
 		System.out.println("Welcome to Bowling Heaven!");
 	
 		//Prompt the user to enter the number of players
-		System.out.println("Please enter the number of bowlers: ");
+		System.out.println("Please enter the number of players: ");
 	
 		//Open up standard input
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -41,15 +41,14 @@ public class BowlingGame {
         		for (int i = 0; i < numberOfBowlers; i++) {
         			
         			//Prompt the user to enter the number of players
-					System.out.println("Please enter the name of bowler " + (i+1) + ": ");
+					System.out.println("Please enter the name of player " + (i+1) + ": ");
 					
 					String name = br.readLine();
 					
 					Bowler bowler = new Bowler("");
 					bowlers[i] = bowler;
 					bowlers[i].setName(name);
-					
-					
+						
 				}
 					
         		System.out.println("So the players for this game are: ");
@@ -74,23 +73,39 @@ public class BowlingGame {
         					System.out.println("Strike!");
         					bowlers[i].setRolls(j, pins);
         				}
-        				else if (0 <= pins && pins < 9) {
+        				else if (0 <= pins && pins < 10) {
         					bowlers[i].setRolls(j, pins);
         				}
-/*        				
-        				br.readLine();
-        				if (bowlers[i].getRolls(j) + pins == 10) {
-        					System.out.println("Spare!");
+        				else {
+        					//TODO: NEED TO THROW AN EXCEPTION
+        					System.out.println("This is not a valid number");
+        					//TODO: NEED TO LOOP BACK
         				}
-        				bowlers[i].setRolls(j+1, pins);
-*/        				
+        				
+        				pins = Integer.parseInt(br.readLine());
+	       				if (pins == 10) {
+        					System.out.println("Strike!");
+        					bowlers[i].setRolls(j+1, pins);
+        				}
+        				else if (0 <= pins && pins < 10 - bowlers[i].getRolls(j)) {
+        					bowlers[i].setRolls(j+1, pins);
+        				}        				
+        				
+        				else if (bowlers[i].getRolls(j) + pins == 10) {
+        					System.out.println("Spare!");
+        					bowlers[i].setRolls(j+1, pins);
+        				}
+        				else {
+        				    //TODO: NEED TO THROW AN EXCEPTION
+        					System.out.println("This is not a valid number");
+        				}
+        				
         			}
         		}
     			
     			for (int i = 0; i < numberOfBowlers; i++) {
     				for (int j = 0; j < 10; j++) {
-    					System.out.println("The pins knocked down: " + bowlers[i].getRolls(j));
-    					//bowlers[i].
+    					System.out.println("The pins knocked down: " + (bowlers[i].getRolls(j)) + bowlers[i].getRolls(j));
     				}
     			}
     		
