@@ -12,7 +12,10 @@ import java.io.*;
 	 
 public class BowlingGame {
 
-
+	/**
+	 * Running the application
+	 */
+	 
 	public static void main(String[] args) {
 	
 		System.out.println("Welcome to Bowling Heaven!");
@@ -30,14 +33,18 @@ public class BowlingGame {
 
 			String a = br.readLine();
 	
+			//If the number entered is between 1 and 6, initialise an array
+			//of bowlers of this length and continue with the application
     		if (0 < Integer.parseInt(a) && Integer.parseInt(a) < 7) {
+        		
         		numberOfBowlers = Integer.parseInt(a);
+        		
         		System.out.println("Great, " + numberOfBowlers + " it is!");
         		
-        		
-        		//Create a list of the bowlers 
         		Bowler[] bowlers = new Bowler[numberOfBowlers];
         		
+        		
+        		//Store each bowlers name as it is given in the command line
         		for (int i = 0; i < numberOfBowlers; i++) {
         			
         			int iPlusOne = i+1;
@@ -51,7 +58,8 @@ public class BowlingGame {
 					bowlers[i].setName(name);
 						
 				}
-					
+				
+				//Print the names for each player	
         		System.out.println("So the players for this game are: ");
         		for (int i = 0; i < numberOfBowlers; i++) {
         			int iPlusOne = i+1;
@@ -62,13 +70,17 @@ public class BowlingGame {
         		System.out.println("Let's start the game!");
         		
         		
+        		//For each bowler, read in the integers from the command line
+        		//associated with the number of pins knocked down for both rolls in a frame
+        		//Store these in an array 'roll' for each bowler. 
+        		
         		for (int j = 0; j < 10; j++) { 
         			for (int i = 0; i < numberOfBowlers; i++) {
         				
         				int jPlusOne = j+1;
         				int iPlusOne = i+1;
         				System.out.println("Frame " + jPlusOne);
-        				System.out.println("Player " + (iPlusOne) + ": " + bowlers[i].getName() + " is up!"); 
+        				System.out.println("Player " + iPlusOne + ": " + bowlers[i].getName() + " is up!"); 
         			
         				int pins = Integer.parseInt(br.readLine());
         				//TODO NEED METHOD HERE TO THROW ERROR IF AMOUNT ENTERED IS GREATER THAN 10
@@ -106,11 +118,20 @@ public class BowlingGame {
         			}
         		}
     			
+    			
+    			//Print out the pins knocked down per frame for each bowler
     			for (int i = 0; i < numberOfBowlers; i++) {
+    				
+    				int iPlusOne = i+1;
+    				System.out.println("So, per frame " + bowlers[i].getName() + " knocked down: "); 
+    				
     				for (int j = 0; j < 10; j++) {
+    					
     					int totalPinsKnockedInAFrame = bowlers[i].getRolls(j) + bowlers[i].getRolls(j+1);
+    					int jPlusOne = j+1;
+    					
     					//TODO FIX THIS
-    					System.out.println("The pins knocked down: " + totalPinsKnockedInAFrame);
+    					System.out.println("Frame " + jPlusOne + ": " + totalPinsKnockedInAFrame);
     				}
     			}
     		
