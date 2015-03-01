@@ -13,18 +13,20 @@ import java.io.*;
 
 public class Bowler {
 
+	//The name of the bowler
 	private String name;
 	
-	//Define an array of integers to store the scores in a bowlers game.
+	//An array of integers to store the pins knocked down in a bowlers game.
 	//A game consists of 10 frames, each of two rolls.
 	//A bowler earns a bonus roll if they score a strike in the final frame.
 	private int[] rolls = new int[21];
 	
+	//The score from a bowlers game
 	int score;
 	
 	
 	/**
-	 * Create a Bowler with a name, 
+	 * Create a bowler with a name, 
 	 * an associated array of integers to store the scores in the bowlers game
 	 * and an initial score of 0.
 	 */
@@ -38,7 +40,7 @@ public class Bowler {
 	
 	
 	/**
-	 * Returns the Bowlers name
+	 * Returns the bowlers name
 	 */
 	 
 	 public String getName() {
@@ -82,10 +84,15 @@ public class Bowler {
 		
 	} //end of score() method
 	
-	//TODO WORK ON THIS SO THAT IT RETURNS THE SCORE AFTER THE SETSCORE METHOD
-	public int getScore() {
+	
+	/**
+	 * Returns the score of a game
+	 */
+	
+	public int getScore(Bowler bowler) {
 		return score;
 	}
+	
 	
 	/**
 	 * Return a specified integer from the array of rolls. 
@@ -94,6 +101,7 @@ public class Bowler {
     public int getRolls(int i) {
     	return rolls[i];
     }
+    
     
     /**
      * Updates a specified integer in an array of rolls.
